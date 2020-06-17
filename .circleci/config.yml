@@ -13,6 +13,7 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
+      - run: npm install
       - run: npm test
 workflows:
   version: 2.1
