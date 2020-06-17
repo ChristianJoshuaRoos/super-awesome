@@ -9,14 +9,13 @@ jobs:
       - checkout
       - restore_cache: 
           keys:
-          - v1-dependencies-{{checksum "package.json"}}
+          - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
 
-      - run: yarn install --frozen-lockfile
       - save_cache: 
           paths:
             - node_modules
-          key: v1-dependencies-{{checksum "package.json"}}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn ng build --prod
-      - run: yarn ng test --single-run
+      - run: ng build --prod
+      - run: ng test --single-run
