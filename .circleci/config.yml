@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: use npm 14.4.0
       - run: npm build
   test:
     docker:
@@ -14,6 +15,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: use npm 14.4.0
       - run: npm test
 workflows:
   version: 2.1
