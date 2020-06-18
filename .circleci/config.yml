@@ -14,5 +14,8 @@ jobs:
           paths:
             - "node_modules"
       - run: npm test -- --progress=false --browsers=ChromeNoSandbox
-      - run: npm start &
+      - run: 
+          name: Serve the app! 
+          command: npm start
+          background: true
       - run: echo You are super awesome!
