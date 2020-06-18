@@ -14,4 +14,4 @@ jobs:
           paths:
             - "node_modules"
       - run: npm test -- --progress=false --browsers=ChromeNoSandbox
-      - run: ng e2e --no-progress --protractorConfig=protractor-ci.conf.js
+      - run: npm start
