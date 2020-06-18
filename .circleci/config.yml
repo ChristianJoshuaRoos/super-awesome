@@ -18,7 +18,7 @@ jobs:
           command: npm test -- --progress=false --browsers=ChromeNoSandbox
       - run:
           name: Run E2E Tests
-          command: npm e2e
+          command: npm run e2e -- --protractor-config=protractor-ci.conf.js 
       - run: 
           name: Serve the App
           command: npm start &
