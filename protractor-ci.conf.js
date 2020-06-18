@@ -1,4 +1,5 @@
-const config = require('./protractor.conf').config;
+const config;
+
 config.capabilities = {
   browserName: 'chrome',
   chromeOptions: {
