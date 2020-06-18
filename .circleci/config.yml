@@ -13,5 +13,5 @@ jobs:
           key: AngularCircleCI-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: npm test -- --single-run --no-progress --browser=ChromeNoSandbox
+      - run: npm test -- --progress=false --browsers=ChromeNoSandbox
       - run: npm e2e -- --no-progress --config=protractor-ci.conf.js
