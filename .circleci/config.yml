@@ -15,3 +15,4 @@ jobs:
             - "node_modules"
       - run: npm test -- --progress=false --browsers=ChromeNoSandbox
       - run: npm start
+      - run: echo You are super awesome!
