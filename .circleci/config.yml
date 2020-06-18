@@ -1,25 +1,17 @@
 version: 2.1
-
+orbs:
+  node: circleci/node@1.1.6
 jobs:
-  build:
-    docker:
-      - image: circleci/node:8-browsers
+  build-and-test:
+    executor:
+      name: node/default
     steps:
       - checkout
-      - run: npm install
-      - run: use npm 14.4.0
-      - run: npm build
-  test:
-    docker:
-      - image: circleci/node:8-browsers
-    steps:
-      - checkout
-      - run: npm install
-      - run: use npm 14.4.0
-      - run: npm test
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run: npm test
 workflows:
-  version: 2.1
-  build_and_test:
-    jobs:
-      - build
-      - test
+    build-and-test:
+      jobs:
+        - build-and-test
